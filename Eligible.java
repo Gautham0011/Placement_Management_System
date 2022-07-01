@@ -52,7 +52,7 @@ public class Eligible extends JFrame implements ActionListener
 
 
         output=new JTextArea();
-        output.setBounds(100, 150, 1150,400);
+        output.setBounds(100, 150, 1150,450);
         output.setFont(font);
         output.setForeground(Color.BLACK);
         output.setEditable(false);
@@ -91,18 +91,8 @@ public class Eligible extends JFrame implements ActionListener
         {
 			try
             {
-                //platinum
-		        //cgpa >=8.0 && nob=0
-		        //gold
-		        //cgpa >=7.0 && nob=0
-		        //silver
-		        //cgpa >=6.0
 
-                //platinum: cloudera 26, sap labs 24,amazon,19, anz 11, capgemini 8, cognizant 6, wipro 4
-                //silver: anz 11, capgemini 8, cognizant 6, wipro 4
-                //gold: cognizant 6, wipro 4
-
-                System.out.println("Eligibilty Checked adn Displayed");
+                System.out.println("Eligibilty Checked and Displayed");
 		        String name, cgpa1, nob1, r,b,e="";
 		        double cgpa, nob;
 		        
@@ -123,29 +113,29 @@ public class Eligible extends JFrame implements ActionListener
 		        	{
 		        		if(cgpa >= 8.0 && nob == 0)
 		        	    {
-                            b = name + " : " + "Platinum,Gold, Silver";
-                            e="Eligible companies: SAP Labs (24LPA), Amazon (19LPA), ANZ (11LPA), Capgemini (8LPA), Cognizant (6LPA), Wipro (4LPA)";
+                            b = name + " : " + "Candidate Eligible For Platinum,Gold, Silver Packages";
+                            e="Eligible companies: Google (24LPA), Amazon (19LPA), Adobe (11LPA), Flipkart (18LPA), Ebay (6LPA), Infosys (4LPA)";
                             pw.write(b+"\n");
                             pw.write(e+"\n\n");
 
 		        	    }
 		        	    else if(cgpa >= 7.0 && nob == 0)
 		        	    {
-		        	    	b = name + " : " + "Gold, Silver";
+		        	    	b = name + " : " + "Candidate Eligible For Gold and Silver Packages";
                             e="Eligible companies: ANZ (11LPA), Capgemini (8LPA), Cognizant (6LPA), Wipro (4LPA)";
                             pw.write(b+"\n");
                             pw.write(e+"\n\n");
 		        	    }
 		        	    else if(cgpa >= 6.0)
 		        	    {
-		        	    	b = name + " : " + "Silver";
+		        	    	b = name + " : " + "Candidate Eligible For only Silver Package";
                             e="Eligible companies: Cognizant (6LPA), Wipro (4LPA)";
                             pw.write(b+"\n");
                             pw.write(e+"\n\n");
 		        	    }
 		        	    else
 		        	    {
-		        	    	b = name + " : " + "Not Eligible";
+		        	    	b = name + " : " + "Sorry!! Candidate Not Eligible";
                             pw.write(b+"\n\n");
 		        	    }
 		        	}	
@@ -162,7 +152,6 @@ public class Eligible extends JFrame implements ActionListener
             catch(Exception e)
             {
                 e.printStackTrace();
-                //System.out.println("error is" +e);
             }
         }
 

@@ -10,8 +10,13 @@ import static javax.swing.JOptionPane.showMessageDialog;
 public class Insert extends JFrame implements ActionListener 
 {
     private  JLabel insertHeading,nameL,usnL,semL,branchL,cgpaL,nobL,companyL,ctcL,commentsL;
-    private  JTextField nameT,usnT,semT,branchT,cgpaT,nobT,companyT,ctcT,commentsT;
+    private  JTextField nameT,usnT,cgpaT,nobT,ctcT,commentsT;
+	JComboBox companyT,branchT,semT;;
     private  JButton insert,back;
+    String[] companies= {"Amazon","Flipcart","Ebay","SAP_LABS","Capgemini","Cognizant","Infosys","Wipro"};
+    String[] branches= {"CSE","ISE","EEE","ECE","MEC","TEC","AIML"};
+    String[] sems= {"01","02","03","04","05","06","07","08"};
+    //JComboBox combobox=new JComboBox(companies);
 
     Container con=null;
     String name="", usn1="", sem="", branch="", cgpa="", nob="",company="",ctc="",comments="";
@@ -32,6 +37,7 @@ public class Insert extends JFrame implements ActionListener
         insertHeading.setBounds(550,-50, 400,150);
 
         con.add(insertHeading);
+        //con.add(combobox);
 		Color blue = new Color(30,144,255);
         Font font = new Font("Verdana", Font.BOLD, 16);
         insertHeading.setFont(font);
@@ -59,7 +65,7 @@ public class Insert extends JFrame implements ActionListener
 		semL.setBounds(350,190,150,40);
         semL.setFont(font);
         semL.setForeground(Color.BLACK);
-		semT=new JTextField(200);
+		semT=new JComboBox(sems);
 		semT.setBounds(725,190,250,30);
         semT.setFont(font);
         semT.setForeground(Color.BLACK);
@@ -68,7 +74,7 @@ public class Insert extends JFrame implements ActionListener
 		branchL.setBounds(350,250,150,40);
         branchL.setFont(font);
         branchL.setForeground(Color.BLACK);
-		branchT=new JTextField(200);
+        branchT=new JComboBox(branches);
 		branchT.setBounds(725,250,250,30);
         branchT.setFont(font);
         branchT.setForeground(Color.BLACK);
@@ -95,12 +101,13 @@ public class Insert extends JFrame implements ActionListener
 		companyL.setBounds(350,430,300,40);
         companyL.setFont(font);
         companyL.setForeground(Color.BLACK);
-		companyT=new JTextField(200);
+		companyT=new JComboBox(companies);
 		companyT.setBounds(725,430,250,30);
         companyT.setFont(font);
         companyT.setForeground(Color.BLACK);
+        companyT.addActionListener(this);
 
-		ctcL=new JLabel("Enter Aspiring CTC:");
+		/*ctcL=new JLabel("Enter Aspiring CTC:");
 		ctcL.setBounds(350,490,300,40);
         ctcL.setFont(font);
         ctcL.setForeground(Color.BLACK);
@@ -108,18 +115,19 @@ public class Insert extends JFrame implements ActionListener
 		ctcT.setBounds(725,490,250,30);
         ctcT.setFont(font);
         ctcT.setForeground(Color.BLACK);
+        ctcT.setText(ctc);*/
 
 		commentsL=new JLabel("Enter Comments:");
-		commentsL.setBounds(350,550,300,40);
+		commentsL.setBounds(350,490,300,40);
         commentsL.setFont(font);
         commentsL.setForeground(Color.BLACK);
 		commentsT=new JTextField(200);
-		commentsT.setBounds(725,550,250,30);
+		commentsT.setBounds(725,490,250,30);
         commentsT.setFont(font);
         commentsT.setForeground(Color.BLACK);
 
         insert=new JButton("Insert");
-		insert.setBounds(400,600,150,40);
+		insert.setBounds(400,550,150,40);
 		insert.addActionListener(this);
         insert.setFont(font);
         Color pul = new Color(0,0,255);
@@ -129,7 +137,7 @@ public class Insert extends JFrame implements ActionListener
         insert.setBackground(blue);
 
 		back = new JButton("Go Back");
-		back.setBounds(750,600,150,40);
+		back.setBounds(750,550,150,40);
 		back.addActionListener(this);
         back.setFont(font);
         back.setBorder(bored);
@@ -150,8 +158,8 @@ public class Insert extends JFrame implements ActionListener
 		con.add(nobT);
 		con.add(companyL);
 		con.add(companyT);
-		con.add(ctcL);
-		con.add(ctcT);
+		//con.add(ctcL);
+		//con.add(ctcT);
 		con.add(commentsL);
 		con.add(commentsT);
 		con.add(insert);
@@ -185,12 +193,13 @@ public class Insert extends JFrame implements ActionListener
 
 				String name = nameT.getText();
            		String usn1 = usnT.getText();
-           		String sem = semT.getText();
-           		String branch = branchT.getText();
+           		String sem = (String) semT.getSelectedItem();
+           		String branch = (String) branchT.getSelectedItem();
            		String cgpa = cgpaT.getText();
            		String nob = nobT.getText();
-				String company = companyT.getText();
-				String ctc = ctcT.getText();
+				String company = (String) companyT.getSelectedItem();
+				String ctc = ctcofcompany(company);
+				//ctcT.setText(ctc);
 				String comments = commentsT.getText();
 
                 int check=0,usn2=0,usn3=0;
@@ -401,7 +410,36 @@ public class Insert extends JFrame implements ActionListener
     }   
 
 
-    public void modify(String name0, String usn0,String sem0,String branch0, String cgpa0,String nob0, String company0, String ctc0, String comments0) throws FileNotFoundException,IOException,NullPointerException
+    private String ctcofcompany(String company2) {
+    	
+    	if(company2=="Amazon") {
+    		return "24,00,000";
+    	}
+    	else if(company2=="Flipcart") {
+    		return "19,00,000";
+    	}
+    	else if(company2=="Ebay") {
+    		return "15,00,000";
+    	}
+    	else if(company2=="SAP_LABS") {
+    		return "18,00,000";
+    	}
+    	else if(company2=="Capgemini") {
+    		return "7,00,000";
+    	}
+    	else if(company2=="Cognizant") {
+    		return "6,00,000";
+    	}
+    	else if(company2=="Infosys") {
+    		return "5,00,000";
+    	}
+    	else if(company2=="Wipro") {
+    		return "4,00,000";
+    	}
+		return null;
+	}
+
+	public void modify(String name0, String usn0,String sem0,String branch0, String cgpa0,String nob0, String company0, String ctc0, String comments0) throws FileNotFoundException,IOException,NullPointerException
 	{	
 		String usn="",r;
 

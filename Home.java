@@ -10,7 +10,7 @@ import java.io.*;
 public class Home extends JFrame implements ActionListener
 {
 	JLabel welcome, heading;
-    private  JButton insert, delete, display, search, ledger, eligible;
+    private  JButton insert, delete, display, search, ledger, eligible,search1;
 
 
 	Home()
@@ -68,15 +68,15 @@ public class Home extends JFrame implements ActionListener
         display.setBorder(bored);
         display.setForeground(Color.WHITE);
         display.setBackground(blue);
-
-		search = new JButton("Search Record");
-		search.addActionListener(this);
-		search.setBounds(200,475, 175, 50);
-		Font font4 = new Font("Verdana", Font.BOLD, 16);
-        search.setFont(font4);
-        search.setBorder(bored);
-        search.setForeground(Color.WHITE);
-        search.setBackground(blue);
+        
+        search1 = new JButton("Search");
+		search1.addActionListener(this);
+		search1.setBounds(200,475, 175, 50);
+		Font font7 = new Font("Verdana", Font.BOLD, 16);
+        search1.setFont(font7);
+        search1.setBorder(bored);
+        search1.setForeground(Color.WHITE);
+        search1.setBackground(blue);
 
 		ledger = new JButton("View changes");
 		ledger.addActionListener(this);
@@ -101,14 +101,14 @@ public class Home extends JFrame implements ActionListener
 		con.add(insert);
 		con.add(delete);
 		con.add(display);
-		con.add(search);
+		con.add(search1);
 		con.add(ledger);
 		con.add(eligible);
 		
 		JLabel background;
 		con.setSize(1200,700);
 		con.setLayout(null);
-       	ImageIcon img=new ImageIcon("C:\\Users\\MCHOME\\Desktop\\fsminipresent\\placement.jpg");
+       	ImageIcon img=new ImageIcon("C:\\Users\\MCHOME\\Downloads\\fsminipresent\\fsminipresent\\placement.jpg");
        	background = new JLabel("",img,JLabel.CENTER);
         background.setBounds(0,0,1200,850);
         add(background);
@@ -143,11 +143,11 @@ public class Home extends JFrame implements ActionListener
 			dis.setSize(2300,790);
 			dis.setVisible(true);
 		}
-
-		if(ae.getSource()==search)
+		
+		if(ae.getSource()==search1)
 		{
 			this.dispose();
-			Search ser=new Search();
+			Search1 ser=new Search1();
 			ser.setSize(2300,790);
 			ser.setVisible(true);
 		}

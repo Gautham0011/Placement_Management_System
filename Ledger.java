@@ -44,18 +44,6 @@ public class Ledger extends JFrame implements ActionListener
         output.setFont(font);
         output.setForeground(Color.BLACK);
         output.setEditable(false);
-        //JScrollPane scroll = new JScrollPane(output);
-        //JScrollPane sampleScrollPane = new JScrollPane (output, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-
-        // JScrollPane scroll = new JScrollPane(output);
-        // scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        // this.add(scroll);
-        // //scroll.setBounds(200,150, 900, 400 );
-        // scroll.setSize( 900, 400 );
-        // setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // //scroll(output, "bottom");
-        // //scroll.setPreferredSize(new Dimension(450, 110));
-        // setVisible(true);
     
 
         display = new JButton("Display");
@@ -153,7 +141,6 @@ public class Ledger extends JFrame implements ActionListener
         String company_j=jj[4];
         String ctc_j=jj[5];
         String comments_j=jj[6];
-		
 		int item1=0,item2=0;
 
 		item1=Integer.parseInt(usn_s);
@@ -228,12 +215,7 @@ public class Ledger extends JFrame implements ActionListener
                 pw.write("END OF RECORD\n");
 				ledger(s1,s2,initial); 
 			} 
-            // else  //ss is reaching 999
-            // {
-            //     s2="999";
-            //     ledger(s1,s2,initial);
-            // }
-
+          
 		}
 	}	
 
