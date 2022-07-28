@@ -22,19 +22,20 @@ Placement Management System offers the following functionalities:
 
 # Typical Features include:
 
- Insert/Modify Student Records – This system helps the placement team to insert each student
+- Insert/Modify Student Records – This system helps the placement team to insert each student
 record once and update it timely, and store it for further usages during placements, segregating
 students based on their CGPA, their interests and aspirations based on the eligibility criteria.
- Delete Student Records – This system enables options of deleting existing student records, or
+- Delete Student Records – This system enables options of deleting existing student records, or
 wrongly entered student record.
- Eligibility View – As a part of final consolidated view this system provides a view of student
+- Eligibility View – As a part of final consolidated view this system provides a view of student
 where each student’s eligibility criteria is checked and corresponding eligible companies are
 displayed.
- View Changes – We have an option to view each and every changes done to each record from
+- View Changes – We have an option to view each and every changes done to each record from
 the time of insertion followed by any number of modifications done to the record.
- Searching Student record – As with placement system will always want to categorise students
+- Searching Student record – As with placement system will always want to categorise students
 and view particular set of records at a time, this system enables such features by providing
 variety of search categories namely search by USN, search by branch, search by company.
+
 Placement Management System provides a clear picture of all students where they stand in terms of
 placement eligibility criteria and which companies they are eligibility to, it provides an efficient
 search feature to the user which helps the placement handling team to search records of student by
