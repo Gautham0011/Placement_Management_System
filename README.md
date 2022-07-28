@@ -54,7 +54,7 @@ It has complete information regarding the project and its Implementation
 
 ---
 
-# WEBSITE
+# APPLICATION
 
 ## ![Home Page](https://user-images.githubusercontent.com/85282195/181412157-db9b9a62-df00-44d7-89f2-36ff912d5482.PNG)
 
